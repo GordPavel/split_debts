@@ -1,0 +1,133 @@
+{
+  "persons": [
+    {
+      "id": "11",
+      "partyId": "1",
+      "name": "Вася"
+    },
+    {
+      "id": "12",
+      "partyId": "1",
+      "name": "Петя"
+    },
+    {
+      "id": "13",
+      "partyId": "1",
+      "name": "Вова"
+    },
+    {
+      "id": "14",
+      "partyId": "1",
+      "name": "Саша"
+    }
+  ],
+  "spending": [
+    {
+      "id": "5",
+      "partyId": "1",
+      "name": "Вода",
+      "payer": "11",
+      "payees": [
+        {
+          "first": 150,
+          "second": "11"
+        },
+        {
+          "first": 150,
+          "second": "12"
+        },
+        {
+          "first": 150,
+          "second": "13"
+        },
+        {
+          "first": 150,
+          "second": "14"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "partyId": "1",
+      "name": "Сок",
+      "payer": "12",
+      "payees": [
+        {
+          "first": 350,
+          "second": "11"
+        },
+        {
+          "first": 350,
+          "second": "14"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "partyId": "1",
+      "name": "Кола",
+      "payer": "13",
+      "payees": [
+        {
+          "first": 100,
+          "second": "11"
+        },
+        {
+          "first": 100,
+          "second": "12"
+        },
+        {
+          "first": 100,
+          "second": "13"
+        },
+        {
+          "first": 100,
+          "second": "14"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "partyId": "1",
+      "name": "Лимонад",
+      "payer": "14",
+      "payees": [
+        {
+          "first": 1000,
+          "second": "11"
+        },
+        {
+          "first": 400,
+          "second": "13"
+        },
+        {
+          "first": 200,
+          "second": "14"
+        }
+      ]
+    }
+  ],
+  "expectedTransactions": [
+    {
+      "id": "1",
+      "partyId": "1",
+      "payer": "11",
+      "payee": "14",
+      "amount": 800
+    },
+    {
+      "id": "2",
+      "partyId": "1",
+      "payer": "11",
+      "payee": "12",
+      "amount": 200
+    },
+    {
+      "id": "3",
+      "partyId": "1",
+      "payer": "13",
+      "payee": "12",
+      "amount": 250
+    }
+  ]
+}

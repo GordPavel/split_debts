@@ -1,0 +1,41 @@
+{
+  "persons": [
+    {
+      "id": "11",
+      "partyId": "2",
+      "name": "Вася"
+    },
+    {
+      "id": "12",
+      "partyId": "2",
+      "name": "Петя"
+    }
+  ],
+  "spending": [
+    {
+      "id": "5",
+      "partyId": "2",
+      "name": "Вода",
+      "payer": "11",
+      "payees": [
+        {
+          "first": 150,
+          "second": "12"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "partyId": "2",
+      "name": "Сок",
+      "payer": "12",
+      "payees": [
+        {
+          "first": 150,
+          "second": "11"
+        }
+      ]
+    }
+  ],
+  "expectedTransactions": []
+}
