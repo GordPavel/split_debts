@@ -1,17 +1,17 @@
-package my.org.splitwise
+package my.org.splitwise.core
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo
-import com.fasterxml.jackson.annotation.ObjectIdGenerators
+import com.fasterxml.jackson.annotation.ObjectIdGenerators.StringIdGenerator
 import java.math.BigDecimal
 
-@JsonIdentityInfo(scope = Person::class, generator = ObjectIdGenerators.StringIdGenerator::class, property = "id")
+@JsonIdentityInfo(scope = Person::class, generator = StringIdGenerator::class, property = "id")
 data class Person(
     val id: String,
     val partyId: String,
     val name: String,
 )
 
-@JsonIdentityInfo(scope = Spending::class, generator = ObjectIdGenerators.StringIdGenerator::class, property = "id")
+@JsonIdentityInfo(scope = Spending::class, generator = StringIdGenerator::class, property = "id")
 data class Spending(
     val id: String,
     val partyId: String,
@@ -20,7 +20,7 @@ data class Spending(
     val payees: List<Pair<BigDecimal, Person>>
 )
 
-@JsonIdentityInfo(scope = Transaction::class, generator = ObjectIdGenerators.StringIdGenerator::class, property = "id")
+@JsonIdentityInfo(scope = Transaction::class, generator = StringIdGenerator::class, property = "id")
 data class Transaction(
     val id: String,
     val partyId: String,

@@ -1,6 +1,7 @@
-package my.org.splitwise
+package my.org.splitwise.core
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import my.org.splitwise.TestPartyObject
 import spock.lang.Specification
 import spock.lang.Unroll
 
