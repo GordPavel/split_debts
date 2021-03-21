@@ -1,1 +1,4 @@
-rootProject.name = "splitwise"
+rootProject.name = "split_debts"
+include(
+    "core"
+)

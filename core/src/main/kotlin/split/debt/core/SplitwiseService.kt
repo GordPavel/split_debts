@@ -1,4 +1,4 @@
-package my.org.splitwise.core
+package split.debt.core
 
 import java.math.BigDecimal
 import java.util.function.BinaryOperator

@@ -1,4 +1,4 @@
-package my.org.splitwise.core
+package split.debt.core
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo
 import com.fasterxml.jackson.annotation.ObjectIdGenerators.StringIdGenerator
