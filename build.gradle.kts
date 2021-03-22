@@ -13,6 +13,7 @@ subprojects {
     }
 
     apply {
+        plugin("semver")
         plugin("io.spring.dependency-management")
     }
 
