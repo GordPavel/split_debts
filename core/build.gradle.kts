@@ -1,15 +1,16 @@
+import split.debts.plugin.versions.DependenciesVersionsPlugin.JACKSON_VERSION
+import split.debts.plugin.versions.DependenciesVersionsPlugin.SPOCK_VERSION
+
 plugins {
     kotlin("jvm")
     id("groovy")
 }
 
 dependencies {
-    val jacksonVersion = "2.12.2"
-    implementation("com.fasterxml.jackson.core:jackson-core:$jacksonVersion")
-    implementation("com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion")
-    implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
+    implementation("com.fasterxml.jackson.core:jackson-core:${JACKSON_VERSION.version}")
+    implementation("com.fasterxml.jackson.core:jackson-annotations:${JACKSON_VERSION.version}")
+    implementation("com.fasterxml.jackson.core:jackson-databind:${JACKSON_VERSION.version}")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:${JACKSON_VERSION.version}")
 
-    val spockVersion = "1.3-groovy-2.5"
-    testImplementation("org.spockframework:spock-core:$spockVersion")
+    testImplementation("org.spockframework:spock-core:${SPOCK_VERSION.version}")
 }
