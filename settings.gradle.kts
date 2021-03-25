@@ -1,4 +1,5 @@
 rootProject.name = "split_debts"
 include(
-    "core"
+    "core",
+    "telegram-bot"
 )
