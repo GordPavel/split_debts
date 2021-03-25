@@ -1,3 +1,13 @@
 telegram.bot:
   username: split_debts_bot
   token: ${TELEGRAM_BOT_TOKEN}
+  processors.languageCommandsTexts:
+    ru:
+      commandsTexts:
+        - commandText: "/start"
+          commandResponseTemplate: "Добро пожаловать"
+        - commandText: "/info"
+          commandResponseTemplate: "
+                                    /start - Скажу привет
+                                    "
+      defaultResponse: "Я вас не понял, напишите /info, чтобы получить список доступных команд"
