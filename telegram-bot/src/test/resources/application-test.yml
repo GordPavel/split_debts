@@ -1,2 +1,3 @@
 telegram.bot:
+  tracing.enabled: false
   token: test_token

@@ -26,6 +26,7 @@ dependencies {
     implementation(project(":core"))
 
     implementation("io.github.microutils:kotlin-logging:1.12.5")
+    implementation(project(":telegram-bot-sleuth-tracing-starter"))
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
