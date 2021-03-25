@@ -1,7 +1,6 @@
 import split.debts.plugin.versions.DependenciesVersionsPlugin.SPRING_CLOUD_VERSION
 
 plugins {
-    id("org.springframework.boot")
     kotlin("jvm")
     kotlin("plugin.spring")
 }
