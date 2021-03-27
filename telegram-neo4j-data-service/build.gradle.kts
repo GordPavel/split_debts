@@ -1,3 +1,4 @@
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 import split.debts.plugin.versions.DependenciesVersionsPlugin.*
 
@@ -31,13 +32,9 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.4.1")
 }
 
-tasks.withType<BootJar> {
-    enabled = false
-}
-
-tasks.withType<Jar> {
-    enabled = true
-}
+tasks.getByName<BootJar>("bootJar") { enabled = false }
+tasks.getByName<BootBuildImage>("bootBuildImage") { enabled = false }
+tasks.getByName<Jar>("jar") { enabled = true }
 
 dependencyManagement {
     imports {
