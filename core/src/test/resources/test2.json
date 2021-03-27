@@ -2,12 +2,12 @@
   "persons": [
     {
       "id": "11",
-      "partyId": "2",
+      "partyIds": ["2"],
       "name": "Вася"
     },
     {
       "id": "12",
-      "partyId": "2",
+      "partyIds": ["2"],
       "name": "Петя"
     }
   ],

@@ -2,22 +2,22 @@
   "persons": [
     {
       "id": "11",
-      "partyId": "1",
+      "partyIds": ["1"],
       "name": "Вася"
     },
     {
       "id": "12",
-      "partyId": "1",
+      "partyIds": ["1"],
       "name": "Петя"
     },
     {
       "id": "13",
-      "partyId": "1",
+      "partyIds": ["1"],
       "name": "Вова"
     },
     {
       "id": "14",
-      "partyId": "1",
+      "partyIds": ["1"],
       "name": "Саша"
     }
   ],

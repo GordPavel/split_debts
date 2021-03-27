@@ -39,6 +39,7 @@ class SplitwiseService {
 
         val transactions = mutableListOf<Transaction>()
         var transactionsCounter = 0
+        val partyId = party.firstOrNull()?.partyId
         if (payersIterator.hasNext() && payeesIterator.hasNext()) {
             var payer = payersIterator.next()
             var payee = payeesIterator.next()
@@ -47,7 +48,7 @@ class SplitwiseService {
                 transactions.add(
                     Transaction(
                         (++transactionsCounter).toString(),
-                        payer.key.partyId,
+                        partyId!!,
                         payer.key,
                         payee.key,
                         minimalAmount
