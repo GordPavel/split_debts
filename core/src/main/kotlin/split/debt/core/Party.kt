@@ -7,7 +7,7 @@ import java.math.BigDecimal
 @JsonIdentityInfo(scope = Person::class, generator = StringIdGenerator::class, property = "id")
 data class Person(
     val id: String,
-    val partyId: String,
+    val partyIds: Collection<String>,
     val name: String,
 )
 
