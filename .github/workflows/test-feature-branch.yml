@@ -1,10 +1,9 @@
 name: Test feature branch
 
 on:
-  on:
-    push:
-      branches-ignore:
-        - 'master'
+  push:
+    branches-ignore:
+      - 'master'
 jobs:
   test:
     name: Unit-Test

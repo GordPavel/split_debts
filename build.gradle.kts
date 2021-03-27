@@ -1,3 +1,4 @@
+import io.wusa.extension.SemverGitPluginExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -23,4 +24,6 @@ subprojects {
             jvmTarget = "11"
         }
     }
+
+    version = (extensions["semver"] as SemverGitPluginExtension).info
 }
