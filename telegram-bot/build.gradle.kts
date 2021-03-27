@@ -18,19 +18,18 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
 
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.cloud:spring-cloud-sleuth-zipkin")
-    implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
     runtimeOnly("io.micrometer:micrometer-registry-prometheus")
 
     implementation("org.telegram:telegrambots-spring-boot-starter:4.1")
     implementation(project(":core"))
+    implementation(project(":telegram-data-service"))
+    implementation(project(":telegram-neo4j-data-service"))
 
     implementation("io.github.microutils:kotlin-logging:1.12.5")
     implementation(project(":telegram-bot-sleuth-tracing-starter"))
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
-    testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.spockframework:spock-core:${SPOCK_VERSION.version}")
     testImplementation("org.spockframework:spock-spring:${SPOCK_VERSION.version}")
     testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock")
