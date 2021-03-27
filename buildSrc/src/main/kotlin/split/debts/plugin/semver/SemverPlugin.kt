@@ -1,5 +1,6 @@
 package split.debts.plugin.semver
 
+import io.wusa.TagType
 import io.wusa.extension.SemverGitPluginExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -11,6 +12,9 @@ class SemverPlugin : Plugin<Project> {
         plugins.apply("io.wusa.semver-git-plugin")
         (extensions["semver"] as SemverGitPluginExtension).also { semver ->
             semver.dirtyMarker = ""
+            semver.tagPrefix = "v"
+            semver.tagType = TagType.LIGHTWEIGHT
+            semver.snapshotSuffix = ""
             semver.branches.apply {
                 branch {
                     regex = "master"
