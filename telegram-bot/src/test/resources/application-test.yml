@@ -1,3 +1,7 @@
+spring:
+  sleuth.enabled: false
+  zipkin.enabled: false
+
 telegram.bot:
   tracing.enabled: false
   token: test_token
