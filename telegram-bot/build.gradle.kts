@@ -1,4 +1,8 @@
-import split.debts.plugin.versions.DependenciesVersionsPlugin.*
+import com.bmuschko.gradle.docker.tasks.image.DockerPushImage
+import com.bmuschko.gradle.docker.tasks.image.DockerTagImage
+import split.debts.plugin.versions.SPOCK_VERSION
+import split.debts.plugin.versions.SPRING_CLOUD_VERSION
+import split.debts.plugin.versions.TESTCONTAINERS_VERSION
 
 plugins {
     id("org.springframework.boot")
@@ -32,8 +36,8 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
     testImplementation("org.testcontainers:junit-jupiter")
-    testImplementation("org.spockframework:spock-core:${SPOCK_VERSION.version}")
-    testImplementation("org.spockframework:spock-spring:${SPOCK_VERSION.version}")
+    testImplementation("org.spockframework:spock-core:${SPOCK_VERSION}")
+    testImplementation("org.spockframework:spock-spring:${SPOCK_VERSION}")
     testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock")
 }
 
@@ -55,7 +59,7 @@ tasks.withType<DockerPushImage> {
 
 dependencyManagement {
     imports {
-        mavenBom("org.testcontainers:testcontainers-bom:${TESTCONTAINERS_VERSION.version}")
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${SPRING_CLOUD_VERSION.version}")
+        mavenBom("org.testcontainers:testcontainers-bom:${TESTCONTAINERS_VERSION}")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${SPRING_CLOUD_VERSION}")
     }
 }

@@ -1,4 +1,4 @@
-import split.debts.plugin.versions.DependenciesVersionsPlugin.SPRING_CLOUD_VERSION
+import split.debts.plugin.versions.SPRING_CLOUD_VERSION
 
 plugins {
     kotlin("jvm")
@@ -15,6 +15,6 @@ dependencies {
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${SPRING_CLOUD_VERSION.version}")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${SPRING_CLOUD_VERSION}")
     }
 }
