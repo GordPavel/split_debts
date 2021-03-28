@@ -5,6 +5,7 @@ plugins {
     kotlin("jvm")
     kotlin("plugin.spring")
     id("groovy")
+    id("com.bmuschko.docker-spring-boot-application")
 }
 
 dependencies {
@@ -34,6 +35,22 @@ dependencies {
     testImplementation("org.spockframework:spock-core:${SPOCK_VERSION.version}")
     testImplementation("org.spockframework:spock-spring:${SPOCK_VERSION.version}")
     testImplementation("org.springframework.cloud:spring-cloud-contract-wiremock")
+}
+
+val dockerImageName = "gordeevp/split-debts-telegram-bot"
+
+tasks.register<DockerTagImage>("dockerTagImage") {
+    dependsOn("dockerBuildImage")
+    group = "docker"
+    targetImageId("split_debts/telegram-bot:${project.version}")
+    repository.set(dockerImageName)
+    tag.set(project.version.toString())
+}
+
+tasks.withType<DockerPushImage> {
+    dependsOn("dockerTagImage")
+    group = "docker"
+    images.set(setOf(dockerImageName))
 }
 
 dependencyManagement {
