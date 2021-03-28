@@ -7,6 +7,7 @@ plugins {
     kotlin("jvm") version "1.4.30" apply false
     kotlin("plugin.spring") version "1.4.30" apply false
     id("com.bmuschko.docker-spring-boot-application") version "6.7.0" apply false
+    id("semver")
 }
 
 subprojects {
