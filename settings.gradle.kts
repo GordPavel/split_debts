@@ -1,4 +1,6 @@
 rootProject.name = "split_debts"
 include(
-    "core"
+    "core",
+    "telegram-bot",
+    "telegram-bot-sleuth-tracing-starter"
 )
