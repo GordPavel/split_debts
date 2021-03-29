@@ -43,6 +43,12 @@ dependencies {
 
 val dockerImageName = "gordeevp/split-debts-telegram-bot"
 
+docker {
+    springBootApplication {
+        baseImage.set("openjdk:11.0.10-slim")
+    }
+}
+
 tasks.register<DockerTagImage>("dockerTagImage") {
     dependsOn("dockerBuildImage")
     group = "docker"
