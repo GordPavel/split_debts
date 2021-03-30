@@ -45,17 +45,19 @@ allprojects {
         }
     }
 
+    val semver = project.extensions.getByType(SemverGitPluginExtension::class)
+
     tasks.register("incrementVersion") {
         val semanticVersionFactory = SemanticVersionFactory()
-        val semverGitPluginExtension = project.extensions.getByType(SemverGitPluginExtension::class)
-        val tagPrefix = semverGitPluginExtension.tagPrefix
-        val lastTag = lastTag(project, tagPrefix, tagType = semverGitPluginExtension.tagType)
+        val tagPrefix = semver.tagPrefix
+        val lastTag = lastTag(project, tagPrefix, tagType = semver.tagType)
         val incrementer = findMatchingRegex(
-            semverGitPluginExtension.branches,
-            semverGitPluginExtension.info.branch.name
+            semver.branches,
+            semver.info.branch.name
         )?.let { getVersionIncrementerByName(it.incrementer) } ?: getVersionIncrementerByName(DEFAULT_INCREMENTER)
         incrementer.increment(semanticVersionFactory.createFromString(lastTag.substring(tagPrefix.length)), project)
     }
+    project.version = semver.info.toString()
 }
 
 subprojects {
