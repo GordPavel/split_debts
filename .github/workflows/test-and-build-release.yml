@@ -48,15 +48,15 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+      - name: Increment release version
+        id: version
+        run: echo "::set-output name=version::$(./gradlew -q incrementVersion :showVersion | cut -d' ' -f2)"
       - name: Publish Docker Image
         run: ./gradlew dockerPushImage
       - name: Cleanup Gradle Cache
         run: |
           rm -f ~/.gradle/caches/modules-2/modules-2.lock
           rm -f ~/.gradle/caches/modules-2/gc.properties
-      - name: Get release version
-        id: version
-        run: echo "::set-output name=version::$(./gradlew -q showVersion | cut -d' ' -f2)"
       - name: Tag release
         uses: tvdias/github-tagger@v0.0.1
         with:
